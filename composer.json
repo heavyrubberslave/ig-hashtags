@@ -1,0 +1,9 @@
+{
+    "name": "hrs/ig-hashtag-validator",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HRS\\HashtagValidator\\": "src/"
+        }
+    }
+}
