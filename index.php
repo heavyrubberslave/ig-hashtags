@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $hashtagBlacklist = (function() {
-    $content = file_get_contents('https://raw.githubusercontent.com/heavyrubberslave/ig-hashtags/master/banned');
+    $content = file_get_contents('https://raw.githubusercontent.com/heavyrubberslave/ig-hashtags/master/resource/banned');
     return preg_split("/\s+/", $content, -1, PREG_SPLIT_NO_EMPTY);
 })();
 
@@ -83,7 +83,7 @@ $hashtagBlacklist = (function() {
             </nav>
         </header>
         <div class="container">
-            <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="form-group">
                     <textarea class="form-control" name="hashtags" placeholder="Enter hashtags to validate..."></textarea>
                 </div>
@@ -91,6 +91,7 @@ $hashtagBlacklist = (function() {
             </form>
 
             <?php
+            
             if (isset($_POST['hashtags'])):
                 $hashtagWhitelist = require_once __DIR__ . '/hashtags_whitelist.php';
 
