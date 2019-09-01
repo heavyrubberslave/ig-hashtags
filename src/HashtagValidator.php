@@ -1,6 +1,6 @@
 <?php
 
-namespace HashtagValidator;
+namespace HRS\HashtagValidator;
 
 class HashtagValidator
 {

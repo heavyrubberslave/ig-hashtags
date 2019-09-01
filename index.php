@@ -91,11 +91,11 @@ $hashtagBlacklist = (function() {
             </form>
 
             <?php
-            
+
             if (isset($_POST['hashtags'])):
                 $hashtagWhitelist = require_once __DIR__ . '/hashtags_whitelist.php';
 
-                $hashtagValidator = new HRS\HashtagValidator\HashtagValidator($hashtagBlacklist, $hashtagWhitelist);
+                $hashtagValidator = new \HRS\HashtagValidator\HashtagValidator($hashtagBlacklist, $hashtagWhitelist);
 
                 try {
                     $result = $hashtagValidator->validate(strip_tags($_POST['hashtags']));
